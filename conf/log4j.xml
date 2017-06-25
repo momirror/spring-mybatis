@@ -1,0 +1,50 @@
+<?xml   version="1.0"   encoding="UTF-8"   ?>   
+<!DOCTYPE   log4j:configuration   SYSTEM   "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="lvevl1" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/C:/Users/msp/workspace/spring-mybatis/info.log" />
+		<param name="Append" value="true" />				
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%n %d{yyyy-MM-dd HH:mm:ss,SSS} %t %n  [%p]  %m %n " />
+		</layout>		
+		<param name="DatePattern" value="yyyyMMdd'.INFO.log.back'" />		
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="info" />
+			<param name="LevelMax" value="info" />
+		</filter>
+	</appender>
+	
+	<appender name="lvevl2" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/C:/Users/msp/workspace/spring-mybatis/warn.log" />
+		<param name="Append" value="true" />				
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%n %d{yyyy-MM-dd HH:mm:ss,SSS} %t %n  [%p]  %m %n " />
+		</layout>		
+		<param name="DatePattern" value="yyyyMMdd'.WARN.log.back'" />			
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="warn" />
+			<param name="LevelMax" value="warn" />
+		</filter>
+	</appender>	
+	
+	<appender name="lvevl3" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/C:/Users/msp/workspace/spring-mybatis/error-fatal.log" />
+		<param name="Append" value="true" />				
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%n %d{yyyy-MM-dd HH:mm:ss,SSS} %t %n  [%p]  %m %n " />
+		</layout>		
+		<param name="DatePattern" value="yyyyMMdd'.ERRORandFATAL.log.back'" />				
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="error" />
+			<param name="LevelMax" value="fatal" />
+		</filter>
+	</appender>
+	
+	<root>
+		<appender-ref ref="lvevl1" />
+		<appender-ref ref="lvevl2" />
+		<appender-ref ref="lvevl3" />
+	</root>
+	
+</log4j:configuration>
