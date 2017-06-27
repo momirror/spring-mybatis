@@ -2,8 +2,24 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.msp.mybatis.employerMapper">
-  <select id="selectEmployee" resultType="com.msp.mybatis.bean.Employee">
+<mapper namespace="com.msp.mybatis.bean.helloworld.EmployeeMapper">
+
+  <select id="getEmployeeById" resultType="com.msp.mybatis.bean.helloworld.Employee">
     select id, last_name lastName,email,gender from tbl_employee where id = #{id}
   </select>
+  
+  <insert id="addEmployee">
+  	insert into tbl_employee(last_name,email,gender) values(#{lastName},#{email},#{gender})
+  </insert>
+  
+  <update id="updateEmployer">
+  		update tbl_employee set last_name=#{lastName},email=#{email},gender=#{gender} where id=#{id}
+  </update>
+  
+  <delete id="deleteEmployeeById">
+  		delete from tbl_employee where id=#{id}
+  </delete>
+  
+  
+  
 </mapper>

@@ -1,4 +1,4 @@
-package com.msp.mybatis.bean;
+package com.msp.mybatis.bean.helloworld;
 
 public class Employee {
 
@@ -35,4 +35,22 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", lastName=" + lastName + ", email=" + email + "]";
 	}
+	public Employee() {
+		super();
+	}
+	public Employee(String lastName, String email, String gender) {
+		super();
+		this.lastName = lastName;
+		this.email = email;
+		this.gender = gender;
+	}
+	public Employee(Integer id, String lastName, String email, String gender) {
+		super();
+		this.id = id;
+		this.lastName = lastName;
+		this.email = email;
+		this.gender = gender;
+	}
+	
+	
 }
